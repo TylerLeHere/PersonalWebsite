@@ -1,4 +1,4 @@
-// This wraps ALL pages in your app
+// This is the main layout wrapper that applies to all pages
 import type React from "react"
 import type { Metadata } from "next"
 import './globals.css'
