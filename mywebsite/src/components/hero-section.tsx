@@ -4,7 +4,7 @@ export function HeroSec(){
 
     //Create a state variable for the text
     const [currentText, setCurrentText] = useState("")
-    const words = ["creative", "learner", "developer"] // Define our words
+    const words = ["engineer.", "creative.", "developer."] // Define our words
     const [wordIndex, setWordIndex] = useState(0) // Which word we’re on
     const [isDeleting, setIsDeleting] = useState(false) // Typing or deleting?
 
@@ -49,25 +49,31 @@ export function HeroSec(){
         }
     }, [currentText, isDeleting, wordIndex, words ])
 
-    return(
-        <section className="pt-20 text-center">
-            <div className="max-w-4xl mx-auto text-center">
-                <h1 className="text-5xl lg:text-8xl font-bold text-gray-900 mb-8">
-                    Hi! I'm Tyler
-                </h1>
-                <div className="text-4xl lg:text-6xl font-bold text-gray-900 mb-12 h-20">
-                    <span>{currentText}</span>
-                </div>
+    return (
+    <section className="pt-32 pb-20 px-6">
+        <div className="max-w-4xl mx-auto text-center">
+        {/* Main Heading */}
+        <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8">Hi! I'm Tyler</h1>
 
-                <div className="max-w-3xl mx-auto space-y-6 text-lg text-gray-700 leading-relaxed">
-                    <p>
-                        I'm a student at the University of Victoria
-                    </p>
-                    <p>
-                        Passionate about technlogy
-                    </p>
-                </div>
-            </div>
-        </section>
+        {/* Typewriter Subtitle */}
+        <div className="text-3xl lg:text-4xl font-bold text-gray-900 mb-12 h-20">
+            <span className="inline-block">
+            {currentText}
+            </span>
+        </div>
+
+        {/* Description */}
+        <div className="max-w-3xl mx-auto space-y-6 text-lg text-gray-700 leading-relaxed">
+            <p>
+            I'm a student at the University of Victoria studying Software Engineering.
+            </p>
+            <p>
+            Passionate about technology, with a focus in software engineering and growing interest in data, system
+            design, and machine learning.
+            </p>
+        </div>
+        </div>
+    </section>
     )
+
 }
