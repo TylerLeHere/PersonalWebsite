@@ -3,17 +3,24 @@ import { ArrowRight } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
+export function ProjectSections() {
+  const projects = [
+    {
+      title: "Nautichat",
+      description: "A powerful NLP-AI system built for Ocean Network Canada",
+      image: "/placeholder.svg?height=300&width=400",
+      color: "bg-blue-100",
+      link: "/projects/Nautichat",
+    },
+    {
+      title: "ASL Go",
+      description: "iOS app to learn ASL with Machine Learning and friendly UI",
+      image: "/api/placeholder?width=400&height=300&text=ASL+Go",
+      color: "bg-green-100",
+      link: "/projects/asl-go",
+    },
+  ]
 
-export function ProjectSections(){
-    const projects = [
-        {
-            title: "Nautichat",
-            description: "A powerful NLP-AI system built for Ocean Network Canada",
-            image: "/placeholder.svg?height=300&width=400",
-            color: "bg-blue-100",
-            link: "/projects/Nautichat"
-        }
-    ]
   return (
     <section id="projects" className="py-24 px-8 bg-white">
       <div className="max-w-7xl mx-auto">

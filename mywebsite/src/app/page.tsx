@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Navigation } from "@/components/navigation";
 import { HeroSec } from "@/components/hero-section";
-import {ProjectSections} from "@/components/project-section";
+import {ProjectSections} from "@/components/project-sections";
 
 export default function Portfolio() {
   return (
