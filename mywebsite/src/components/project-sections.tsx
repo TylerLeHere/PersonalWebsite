@@ -1,3 +1,5 @@
+// mywebsite/src/components/project-sections.tsx
+
 import { Card, CardContent } from "@/components/ui/card"
 import { ArrowRight } from "lucide-react"
 import Image from "next/image"
@@ -19,26 +21,37 @@ export function ProjectSections() {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 gap-15">
+        <div className="grid md:grid-cols-2 gap-12">
           {projects.map((project) => (
             <Link key={project.id} href={`/projects/${project.id}`} className="group block">
-              <Card className="group-hover:shadow-lg transition-all duration-300 border-0 overflow-hidden bg-white">
-                <CardContent className="p-0">
-                  <div className={`relative h-80 ${project.color} flex items-center justify-center overflow-hidden`}>
-                    <Image
+              <Card className="group-hover:shadow-xl transition-all duration-300 border rounded-lg overflow-hidden bg-white h-full flex flex-col">
+                <div className="relative h-80 w-full overflow-hidden">
+                   <Image
                       src={project.image || "/placeholder.svg"}
                       alt={project.title}
                       width={500}
                       height={320}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
-                  </div>
-                  <div className="p-8">
-                    <div className="flex justify-between items-start mb-4">
-                      <h3 className="text-2xl font-semibold text-gray-900">{project.title}</h3>
-                      <ArrowRight className="h-6 w-6 text-gray-600 group-hover:text-gray-900 transition-colors" />
+                </div>
+                <CardContent className="p-6 flex-grow flex flex-col">
+                  <div>
+                    <h3 className="text-2xl font-semibold text-gray-900 mb-2">{project.title}</h3>
+                    <p className="text-gray-700 leading-relaxed text-lg mb-4">{project.description}</p>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {project.technologies.slice(0, 4).map((tech) => ( // Show first 4 technologies
+                        <span
+                          key={tech}
+                          className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-medium"
+                        >
+                          {tech}
+                        </span>
+                      ))}
                     </div>
-                    <p className="text-gray-700 leading-relaxed text-lg">{project.description}</p>
+                  </div>
+                  <div className="mt-auto flex items-center text-blue-600 font-semibold pt-4">
+                    <span>View Project</span>
+                    <ArrowRight className="h-5 w-5 ml-2 transform group-hover:translate-x-1 transition-transform" />
                   </div>
                 </CardContent>
               </Card>
