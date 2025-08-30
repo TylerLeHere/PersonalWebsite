@@ -7,14 +7,12 @@ import { notFound } from "next/navigation"
 import { projectsData } from "@/app/data/projects"
 
 interface ProjectPageProps {
-  // The params object is now a Promise
   params: Promise<{
     slug: string
   }>
 }
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
-  // FIX 1: Await the params object to get the slug
   const { slug } = await params
   const project = projectsData.find(p => p.id === slug);
 
