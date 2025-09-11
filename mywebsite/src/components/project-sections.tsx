@@ -27,7 +27,7 @@ export function ProjectSections() {
   //Return the structure to display the projects
   return (
     <section id="projects" className="py-24 px-8 bg-gray-50">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="mb-20">
           <h2 className="text-5xl font-bold text-gray-900 mb-4">Featured Projects</h2>

@@ -70,19 +70,6 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             
           </section>
 
-          {/* My Contribution Section */}
-          <section className="mb-12">
-            <h3 className="text-2xl font-semibold text-gray-900 mb-4">My contribution</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {project.content.myContribution.map((contribution, index) => (
-                <div key={index} className="text-center p-4 bg-gray-50 rounded-lg">
-                  <p className="text-sm font-medium text-gray-700">{contribution}</p>
-                </div>
-              ))}
-            </div>
-          </section>
-
-
           {/* Project Image if available */}
           {project.content.images && project.content.images.length > 0 && (
             <div className="mb-12">

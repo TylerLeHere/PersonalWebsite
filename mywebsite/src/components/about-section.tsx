@@ -4,7 +4,7 @@ export function AboutSection() {
   return (
     <section id="about" className="py-24 px-8 bg-white">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
+        <div className="mb-16">
           <h2 className="text-5xl font-bold text-gray-900 mb-4">
             About Me
           </h2>
