@@ -50,16 +50,17 @@ export function HeroSec(){
     }, [currentText, isDeleting, wordIndex, words ])
 
     return (
-    <section className="pt-32 pb-20 px-6">
+    <section className="pt-32 pb-20 px-6 bg-gradient-to-br from-purple-100 via-green-100 to-blue-100">
         <div className="max-w-4xl mx-auto text-center">
         {/* Main Heading */}
         <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8">Hi! I'm Tyler</h1>
 
         {/* Typewriter Subtitle */}
-        <div className="text-3xl lg:text-4xl font-bold text-gray-900 mb-12 h-20">
-            <span className="inline-block">
+        <div className="text-3xl lg:text-4xl font-bold mb-12 h-20">
+            <span className="inline-block text-gray-900">
             {currentText}
             </span>
+            <span className="animate-pulse text-gray-900">|</span>
         </div>
 
         {/* Description */}

@@ -24,3 +24,63 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Slide transition effect */
+.slide-transition {
+  pointer-events: none;
+}
+
+/* Wave transition effect (keeping for backwards compatibility) */
+.wave-transition {
+  pointer-events: none;
+}
+
+/* Smooth page transitions */
+.page-transition-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+/* Project card hover effects */
+.project-card {
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+
+.project-card:hover {
+  transform: translateY(-2px);
+}
+
+.project-card:active {
+  transform: scale(0.98) translateY(-2px);
+  transition: transform 0.1s ease-in-out;
+}
+
+/* Smooth reset for project cards after click */
+.project-card.clicked {
+  transform: scale(0.95);
+  opacity: 0.8;
+  transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+}
+
+/* Slide in animation for project pages */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in {
+  animation: slideIn 0.5s ease-out forwards;
+}

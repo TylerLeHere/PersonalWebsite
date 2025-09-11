@@ -14,10 +14,21 @@ export interface Project {
     overview: string
     problem: string
     solution: string
-    features: string[]
-    challenges: string[]
-    technicalHighlights: string[]
+    myContribution: string[]
+    team: string
+    year: string
+    process?: {
+      title: string
+      sections: {
+        title: string
+        content: string
+      }[]
+    }
     outcome: string
+    keyLearning?: {
+      title: string
+      points: string[]
+    }
     images?: {
       src: string
       alt: string
@@ -37,11 +48,11 @@ export const projectsData: Project[] = [
   {
     id: "nautichat",
     title: "Nautichat",
-    description: "A friendly AI chatbot I helped build for Ocean Network Canada.",
-    image: "/images/nautichat.png",
+    description: "AI-powered assistant for Ocean Networks Canada that makes the vast Oceans 3.0 data archive accessible to researchers, students, Indigenous communities, and policymakers through a simple, conversational interface.",
+    image: "/images/NautiChatLogo.png",
     color: "bg-blue-100",
     technologies: ["Python", "NLP", "AI/ML", "React", "Node.js", "TensorFlow", "PostgreSQL", "Docker"],
-    github: "https://github.com/yourusername/nautichat",
+    github: "https://github.com/tylerle/nautichat",
     live: "https://nautichat-demo.com",
     featured: true,
     metadata: {
@@ -52,33 +63,35 @@ export const projectsData: Project[] = [
       year: "2024"
     },
     content: {
-      overview: "Nautichat is an AI-powered chatbot I helped develop for Ocean Network Canada. The goal was to make their vast ocean data more accessible to researchers and the public. It was a really rewarding project that blended machine learning with a user-friendly interface.",
+      overview: "The Nautichat capstone project was about building an AI-powered assistant for Ocean Networks Canada (ONC). The idea was to make ONC's Oceans 3.0 data archive easier to use by letting people interact with it in plain language. This way, researchers, students, Indigenous communities, and policymakers could find and explore ocean data without needing technical knowledge. My main role was to design and develop an interface that felt simple but still powerful. I wanted the system to feel approachable for first-time users, while still giving researchers the tools they needed to dig deeper into the data.",
       problem: "Ocean Network Canada had a ton of data, but it was hard for researchers to access it without technical expertise. They were spending a lot of time manually sifting through data, which was slowing down their research.",
-      solution: "We built a chatbot that lets users ask questions about the ocean data in plain English. It was a fun challenge to create something that felt natural and intuitive, while still providing powerful insights. Now, anyone can explore the data without needing to be a database expert.",
-      features: [
-        "Ask questions in natural language",
-        "Real-time data visualization",
-        "Automated report generation",
-        "Integration of text, numerical, and geospatial data",
-        "AI-powered data summaries",
-        "API for third-party use"
+      solution: "Throughout the development process, I focused on creating an intuitive yet powerful interface that would enhance the overall user experience and encourage researchers to explore data more efficiently.",
+      myContribution: [
+        "Design with Figma",
+        "Create data visualization with D3.js",
+        "Build NLP pipeline with Python & TensorFlow",
+        "Connect team's code with Git"
       ],
-      challenges: [
-        "Teaching the AI to understand specific marine science terms",
-        "Handling live data streams from various sensors",
-        "Making sure the AI's answers were accurate enough for scientific use",
-        "Optimizing performance for large datasets",
-        "Designing an interface that was easy for non-technical folks to use"
-      ],
-      technicalHighlights: [
-        "Built a custom NLP model trained on oceanography documents",
-        "Used a RAG architecture to ensure the AI gave accurate answers",
-        "Created a scalable system with Docker",
-        "Developed a real-time data pipeline with Apache Kafka and PostgreSQL",
-        "Designed interactive dashboards with D3.js and React"
-      ],
-      outcome: "Nautichat has made a big difference for Ocean Network Canada. It's cut down the time it takes to get answers from their data by 75% and is now used for over 1,000 queries a day. It feels great to know that our work is helping to accelerate ocean research.",
-
+      team: "5 × co-creators",
+      year: "2024",
+      process: {
+        title: "Process",
+        sections: [
+          {
+            title: "",
+            content: "The system was built on a modern, full-stack architecture. Next.js was chosen for the frontend to create a clean and responsive interface for users. The backend was built with FastAPI, providing a fast and solid foundation for the application's logic. The core of the project's intelligence was an AI system implementing a Retrieval-Augmented Generation (RAG) pipeline, connected to a Qdrant vector database. This setup ensured that the assistant provided answers grounded in specific, relevant information from ONC's data archive. A full CI/CD pipeline using Docker and GitHub Actions was also established to automate the process of building and deploying updates, ensuring a smooth development cycle."
+          }
+        ]
+      },
+      outcome: "The result is Nautichat, a fully functional web application that makes complex oceanographic data easy to explore. Users can ask questions in plain English and get back clear answers, complete with data visualizations and source citations. The assistant can handle ambiguous queries by asking clarifying questions and can generate the API calls needed for users to download the datasets they're interested in. A secure admin portal was also delivered, fulfilling a key client requirement for managing the system's knowledge base.",
+      keyLearning: {
+        title: "Key Learnings",
+        points: [
+          "Full-Stack AI Development: The project required building an end-to-end AI system, connecting a Next.js frontend, a FastAPI backend, and the PostgreSQL and Qdrant databases that powered the AI model.",
+          "DevOps and Deployment: Practical experience in DevOps was applied by setting up an automated CI/CD pipeline with Docker and GitHub Actions to streamline the development and deployment process.",
+          "AI System Design: The project involved designing the complex architecture for a hybrid RAG system, including the logic for managing conversation history, retrieving context, and deciding when to use external tools."
+        ]
+      },
       images: [
         {
           src: "/images/nautichat-dashboard.png",
@@ -96,11 +109,11 @@ export const projectsData: Project[] = [
   {
     id: "asl-go",
     title: "ASL Go",
-    description: "An iOS app I designed and built to make learning ASL more accessible.",
-    image: "/images/asl-go.png",
+    description: "iOS app to learn ASL with Machine Learning and friendly UI",
+    image: "",
     color: "bg-green-100",
     technologies: ["Swift", "CoreML", "UIKit", "Machine Learning", "AVFoundation", "Combine"],
-    github: "https://github.com/yourusername/asl-go",
+    github: "https://github.com/tylerle/asl-go",
     live: "https://apps.apple.com/app/asl-go",
     featured: true,
     metadata: {
@@ -111,32 +124,27 @@ export const projectsData: Project[] = [
       year: "2024"
     },
     content: {
-      overview: "ASL Go is an iOS app I helped create during a hackathon to make learning American Sign Language easier and more fun. I'm really proud of how it turned out and the positive feedback we've received.",
+      overview: "In this project case study, I will be sharing my experience designing and developing a mobile app for users to learn American Sign Language. Fostered by MIT's Blueprint hackathon, the goal was to help anyone learn and understand ASL by using AI and other features, thus enabling people to communicate with the deaf community and cultivate more inclusivity.",
       problem: "Learning ASL can be tough. It often requires in-person classes, which can be expensive and hard to find. We wanted to create a more accessible way for people to learn.",
-      solution: "We built an app that uses your phone's camera to give you real-time feedback on your signing. I focused on making the design clean and friendly, with gamified lessons to keep you motivated. It was a great experience to work on a project that could have a real impact.",
-      features: [
-        "Real-time hand gesture recognition",
-        "Interactive lessons for the ASL alphabet and common phrases",
-        "Progress tracking and achievements",
-        "Slow-motion video demonstrations",
-        "Practice mode with instant feedback",
-        "Offline learning"
+      solution: "Throughout the design process, I focused on creating an intuitive yet simple user interface that would enhance the overall user experience and encourage the user to continue learning.",
+      myContribution: [
+        "Design with Figma",
+        "Create logo with Adobe Illustrator",
+        "Firebase signup/login screens with XCode & Swift",
+        "Connecting team's code with Git"
       ],
-      challenges: [
-        "Getting the hand gesture recognition to work well in different lighting",
-        "Making sure the machine learning model ran smoothly on a phone",
-        "Designing an inclusive and welcoming interface",
-        "Balancing gamification with effective learning",
-        "Ensuring the app was accessible to everyone"
-      ],
-      technicalHighlights: [
-        "Trained a custom CoreML model for ASL gesture recognition",
-        "Used ARKit for better hand tracking",
-        "Built a responsive UI with programmatic Auto Layout",
-        "Integrated AVFoundation for video playback",
-        "Used the Combine framework for reactive programming"
-      ],
-      outcome: "ASL Go launched on the App Store and got a great response, with a 4.7-star rating. It's even been featured in a few accessibility collections. It was amazing to see our hackathon project come to life and be so well-received.",
+      team: "4 × co-creators",
+      year: "2024",
+      process: {
+        title: "Process",
+        sections: [
+          {
+            title: "",
+            content: "The design process for the ASL app involved several key stages, starting with creating the initial user interface and sign up/login pages, utilizing Firebase for secure authentication and data storage. I focused on designing an accessible and aesthetically pleasing home page where all features resided. This was one of my first deep dives into UI/UX design, requiring research into optimal color palettes, icons, and illustrations for the app's purpose and audience. Throughout the hackathon, I worked closely with my team to ensure productive contribution through designated features and incorporated their visions into the design. The final app design differed from my initial Figma mockups, teaching me the importance of considering edge cases and potential user screens early in the design stage."
+          }
+        ]
+      },
+      outcome: "The final outcome of ASL Go was a user-friendly and functional downloadable iOS app that fared well in the hackathon. Users were able to successfully login and signup for the app, and have access to ASL flashcards to learn the alphabet. The Machine Learning feature was functional for a range of words in which the user would hold up their hand and the app would tell them what word they were signing. In the future, the team would like to improve upon the statistics and profile page, to track the user's progress and connect it to their account.",
       images: [
         {
           src: "/images/asl-go-home.png",
