@@ -43,14 +43,16 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   return (
     <div className="min-h-screen bg-white projects-page">
       <main className="max-w-5xl mx-auto px-8 py-24 pt-20 animate-slide-in">
-        {/* Breadcrumb Navigation */}
-        <nav className="flex items-center space-x-2 text-gray-500 mb-12 text-lg pt-16">
-          <Link href="/" className="hover:text-gray-900 transition-colors">Home</Link>
-          <span>/</span>
-          <Link href="/#projects" className="hover:text-gray-900 transition-colors">Projects</Link>
-          <span>/</span>
-          <span className="text-gray-900 font-semibold">{project.title}</span>
-        </nav>
+        {/* Breadcrumb Navigation - Above Overview section */}
+        <div className="mb-6 py-3">
+          <div className="flex items-center space-x-2 text-black text-base ml-4">
+            <a href="/" className="hover:text-gray-700 transition-colors">Home</a>
+            <span className="text-gray-400">→</span>
+            <a href="/#projects" className="hover:text-gray-700 transition-colors">Projects</a>
+            <span className="text-gray-400">→</span>
+            <span className="text-black font-medium">{project.title}</span>
+          </div>
+        </div>
 
         {/* Header
         <div className="border-b pb-8 mb-12">
@@ -61,7 +63,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         {/* Content */}
         <div className="max-w-4xl mx-auto text-gray-800 leading-relaxed mt-8">
           <section className="mb-12">
-            <h1 className="text-5xl font-bold text-gray-900 mb-6">Overview</h1>
+            <h1 className="text-4xl font-bold text-gray-900 mb-8">Overview</h1>
             <p className="text-lg leading-relaxed mb-8">{project.content.overview}</p>
           </section>
 
@@ -119,16 +121,16 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           {/* Outcome Section */}
           <section className="mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-8">Outcome</h2>
-            <p className="text-lg leading-relaxed mb-8">{project.content.outcome}</p>
+            <p className="text-base leading-relaxed mb-8">{project.content.outcome}</p>
           </section>
 
           {/* Key Learning Section */}
           {project.content.keyLearning && (
             <section className="mb-12">
               <h2 className="text-4xl font-bold text-gray-900 mb-8">{project.content.keyLearning.title}</h2>
-              <ul className="space-y-4">
+              <ul className="space-y-2">
                 {project.content.keyLearning.points.map((point, index) => (
-                  <li key={index} className="text-lg leading-relaxed flex">
+                  <li key={index} className="text-base leading-relaxed flex">
                     <span className="text-black mr-3">•</span>
                     <span>{point}</span>
                   </li>

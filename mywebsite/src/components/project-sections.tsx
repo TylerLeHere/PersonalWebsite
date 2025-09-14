@@ -21,6 +21,12 @@ export function ProjectSections() {
     
     setTimeout(() => {
       router.push(`/projects/${projectId}`);
+      // Reset body styles after navigation to prevent interference with fixed nav
+      setTimeout(() => {
+        document.body.style.transform = '';
+        document.body.style.opacity = '';
+        document.body.style.transition = '';
+      }, 200);
     }, 150);
   };
 
