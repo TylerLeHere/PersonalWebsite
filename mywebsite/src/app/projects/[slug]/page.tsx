@@ -1,6 +1,5 @@
 // mywebsite/src/app/projects/[slug]/page.tsx
 
-import { Navigation } from "@/components/navigation"
 import { Button } from "@/components/ui/button"
 import { ArrowLeft, Github, ExternalLink } from "lucide-react"
 import Link from "next/link"
@@ -42,12 +41,10 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   }
 
   return (
-    <div className="min-h-screen bg-white">
-      <Navigation />
-
-      <main className="max-w-5xl mx-auto px-8 py-24 pt-32 animate-slide-in">
+    <div className="min-h-screen bg-white projects-page">
+      <main className="max-w-5xl mx-auto px-8 py-24 pt-20 animate-slide-in">
         {/* Breadcrumb Navigation */}
-        <nav className="flex items-center space-x-2 text-gray-500 mb-12 text-lg">
+        <nav className="flex items-center space-x-2 text-gray-500 mb-12 text-lg pt-16">
           <Link href="/" className="hover:text-gray-900 transition-colors">Home</Link>
           <span>/</span>
           <Link href="/#projects" className="hover:text-gray-900 transition-colors">Projects</Link>
@@ -62,7 +59,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         </div> */}
 
         {/* Content */}
-        <div className="max-w-4xl mx-auto text-gray-800 leading-relaxed">
+        <div className="max-w-4xl mx-auto text-gray-800 leading-relaxed mt-8">
           <section className="mb-12">
             <h1 className="text-5xl font-bold text-gray-900 mb-6">Overview</h1>
             <p className="text-lg leading-relaxed mb-8">{project.content.overview}</p>
@@ -144,9 +141,9 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
 
         {/* Back Navigation */}
-        <div className="mt-20 pt-8 border-t">
+        <div className="back-navigation mt-20 pt-8 border-t border-gray-200">
           <Link href="/#projects">
-            <Button variant="ghost" size="lg" className="text-gray-600 hover:text-gray-900">
+            <Button variant="ghost" size="lg" className="text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-colors">
               <ArrowLeft className="mr-2 h-4 w-4" />
               Back to All Projects
             </Button>

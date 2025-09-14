@@ -50,7 +50,7 @@ export function HeroSec(){
     }, [currentText, isDeleting, wordIndex, words ])
 
     return (
-    <section className="pt-32 pb-20 px-6 bg-gradient-to-br from-purple-100 via-green-100 to-blue-100">
+    <section className="pt-32 pb-20 px-6 hero-animated-bg">
         <div className="max-w-4xl mx-auto text-center">
         {/* Main Heading */}
         <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8">Hi! I'm Tyler</h1>

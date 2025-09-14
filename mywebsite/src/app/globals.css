@@ -3,6 +3,8 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --nav-hero-color: #e0e7ff;
+  --animation-duration: 15s;
 }
 
 @theme inline {
@@ -23,6 +25,13 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+html {
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 /* Slide transition effect */
@@ -84,3 +93,206 @@ body {
 .animate-slide-in {
   animation: slideIn 0.5s ease-out forwards;
 }
+
+/* Fixed color for navigation and hero */
+.nav-animated-bg,
+.hero-animated-bg {
+  background: #e0e7ff !important;
+}
+
+/* Force navigation to be visible */
+nav[class*="fixed"] {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 99999 !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+/* Prevent navigation from disappearing on scroll */
+nav {
+  will-change: auto !important;
+  backface-visibility: visible !important;
+  -webkit-backface-visibility: visible !important;
+}
+
+/* Ensure navigation stays fixed and follows scroll */
+nav {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  z-index: 99999 !important;
+  box-shadow: none !important;
+  border: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+/* Additional sticky navigation support */
+.fixed {
+  position: fixed !important;
+}
+
+/* Ensure no parent elements interfere with fixed positioning */
+body, html {
+  position: relative !important;
+  overflow-x: hidden !important;
+}
+
+/* Force navigation to always be sticky */
+nav[class*="fixed"] {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 9999 !important;
+}
+
+/* Ensure navigation is always visible */
+
+/* Global navigation consistency */
+nav {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  z-index: 9999 !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* Ensure navigation stays on top of everything */
+* {
+  box-sizing: border-box;
+}
+
+/* Force navigation to be above all content */
+body > nav {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 99999 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Ensure navigation is always at the very top */
+nav[class*="fixed"] {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 99999 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* Remove any shadow or hover effects on navigation */
+nav {
+  box-shadow: none !important;
+  border: none !important;
+}
+
+nav:hover {
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+/* Normal navigation positioning on project pages */
+.projects-page nav {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 99999 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  border: none !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+  will-change: auto !important;
+}
+
+/* Home page specific navigation - at absolute top */
+.home-page nav {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 99999 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+
+/* Remove any gaps between navigation and hero */
+
+/* Ensure seamless connection */
+nav + section {
+  margin-top: 0 !important;
+  padding-top: 5rem !important;
+}
+
+/* Breadcrumb navigation positioning */
+.projects-page main nav {
+  position: relative !important;
+  z-index: 10 !important;
+  margin-top: 1rem !important;
+  padding-top: 1rem !important;
+}
+
+/* Ensure navigation never disappears on any page */
+body > nav {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 99999 !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+  will-change: auto !important;
+}
+
+/* Specific fix for project pages navigation */
+.projects-page body > nav,
+.projects-page nav[class*="fixed"] {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 99999 !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+  will-change: auto !important;
+  backface-visibility: visible !important;
+  -webkit-backface-visibility: visible !important;
+}
+

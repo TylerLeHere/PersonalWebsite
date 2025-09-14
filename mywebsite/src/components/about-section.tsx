@@ -1,28 +1,37 @@
 "use client"
 
+import Link from "next/link"
+import { ArrowUp } from "lucide-react"
+
 export function AboutSection() {
   return (
     <section id="about" className="py-24 px-8 bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="mb-16">
-          <h2 className="text-5xl font-bold text-gray-900 mb-4">
-            About Me
-          </h2>
+          <div className="flex items-center justify-between">
+            <h2 className="text-5xl font-bold text-gray-900 mb-4">
+              About Me
+            </h2>
+            <Link 
+              href="#" 
+              className="flex items-center text-gray-600 hover:text-gray-900 transition-colors"
+            >
+              <ArrowUp className="mr-2 h-4 w-4" />
+              Back to Top
+            </Link>
+          </div>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-start">
-          {/* Profile Picture - Like Natalie's */}
+          {/* Profile Picture */}
           <div className="flex justify-center md:justify-start">
-            <div className="w-80 h-80 rounded-full overflow-hidden bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center border-4 border-white shadow-lg">
-              {/* Placeholder for your profile picture */}
-              <div className="text-center">
-                <div className="w-16 h-16 mx-auto mb-4 bg-gray-400 rounded-full flex items-center justify-center">
-                  <svg className="w-8 h-8 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
-                  </svg>
-                </div>
-                <p className="text-gray-600 text-sm font-medium">Add your photo here</p>
-              </div>
+            <div className="w-80 h-80 rounded-full overflow-hidden border-4 border-white shadow-lg">
+              <img 
+                src="/images/Aboutpics.png" 
+                alt="Tyler Le - Software Developer"
+                className="w-full h-full object-cover object-center"
+                style={{ objectPosition: "center top" }}
+              />
             </div>
           </div>
 

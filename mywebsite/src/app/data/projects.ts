@@ -41,7 +41,7 @@ export const projectsData: Project[] = [
   {
     id: "nautichat",
     title: "Nautichat",
-    description: "AI-powered assistant for Ocean Networks Canada that makes the vast Oceans 3.0 data archive accessible to researchers, students, Indigenous communities, and policymakers through a simple, conversational interface.",
+    description: "AI-powered assistant for Ocean Networks Canada.",
     image: "/images/NautiChatLogo.png",
     color: "bg-blue-100",
     technologies: ["Python", "NLP", "AI/ML", "React", "Node.js", "TensorFlow", "PostgreSQL", "Docker"],

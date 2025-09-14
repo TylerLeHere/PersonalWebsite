@@ -1,7 +1,7 @@
 "use client"
 // mywebsite/src/components/project-sections.tsx
 
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, ArrowUp } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
@@ -26,11 +26,20 @@ export function ProjectSections() {
 
   //Return the structure to display the projects
   return (
-    <section id="projects" className="py-24 px-8 bg-gray-50">
+    <section id="projects" className="py-24 px-8 bg-white">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="mb-20">
-          <h2 className="text-5xl font-bold text-gray-900 mb-4">Featured Projects</h2>
+          <div className="flex items-center justify-between">
+            <h2 className="text-5xl font-bold text-gray-900 mb-4">Featured Projects</h2>
+            <Link 
+              href="#about" 
+              className="flex items-center text-gray-600 hover:text-gray-900 transition-colors"
+            >
+              <ArrowUp className="mr-2 h-4 w-4" />
+              Back to Top
+            </Link>
+          </div>
         </div>
 
         {/* Projects Grid - Equal sized cards, bigger */}

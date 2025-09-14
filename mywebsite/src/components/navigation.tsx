@@ -4,15 +4,15 @@ import Image from "next/image"
 
 export function Navigation() {
   return (
-    <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-purple-100">
+    <nav className="fixed top-0 left-0 right-0 w-full nav-animated-bg backdrop-blur-md z-50">
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
-          {/* Profile Image */}
+          {/* Logo */}
           <Link href="/" className="flex items-center">
-            <div className="w-12 h-12 rounded-full overflow-hidden bg-yellow-200">
+            <div className="w-12 h-12 rounded-full overflow-hidden bg-white shadow-sm">
               <Image
-                src="/placeholder.svg?height=48&width=48"
-                alt="Profile"
+                src="/images/mylogo.png"
+                alt="Tyler Le Logo"
                 width={48}
                 height={48}
                 className="w-full h-full object-cover"
@@ -22,13 +22,13 @@ export function Navigation() {
 
           {/* Navigation Links */}
           <div className="flex items-center space-x-8">
-            <Link href="#projects" className="text-gray-800 hover:text-purple-600 transition-colors font-medium">
+            <Link href="#projects" className="text-gray-700 hover:text-gray-900 transition-colors font-medium">
               Projects
             </Link>
-            <Link href="#about" className="text-gray-800 hover:text-purple-600 transition-colors font-medium">
+            <Link href="#about" className="text-gray-700 hover:text-gray-900 transition-colors font-medium">
               About
             </Link>
-            <Link href="#experience" className="text-gray-800 hover:text-purple-600 transition-colors font-medium">
+            <Link href="#experience" className="text-gray-700 hover:text-gray-900 transition-colors font-medium">
               Experience
             </Link>
 
@@ -36,14 +36,14 @@ export function Navigation() {
             <Link
               href="https://github.com/TylerLeHere"
               target="_blank"
-              className="text-gray-800 hover:text-purple-600 transition-colors"
+              className="text-gray-700 hover:text-gray-900 transition-colors"
             >
               <Github className="h-6 w-6" />
             </Link>
             <Link
               href="https://www.linkedin.com/in/tyler-le-36331b1a7/"
               target="_blank"
-              className="text-gray-800 hover:text-purple-600 transition-colors"
+              className="text-gray-700 hover:text-gray-900 transition-colors"
             >
               <Linkedin className="h-6 w-6" />
             </Link>
