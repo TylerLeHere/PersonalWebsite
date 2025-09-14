@@ -22,13 +22,13 @@ export function Navigation() {
 
           {/* Navigation Links */}
           <div className="flex items-center space-x-8">
-            <Link href="#projects" className="text-gray-700 hover:text-gray-900 transition-colors font-medium">
+            <Link href="/#projects" className="text-gray-700 hover:text-gray-900 transition-colors font-medium">
               Projects
             </Link>
-            <Link href="#about" className="text-gray-700 hover:text-gray-900 transition-colors font-medium">
+            <Link href="/#about" className="text-gray-700 hover:text-gray-900 transition-colors font-medium">
               About
             </Link>
-            <Link href="#experience" className="text-gray-700 hover:text-gray-900 transition-colors font-medium">
+            <Link href="/#experience" className="text-gray-700 hover:text-gray-900 transition-colors font-medium">
               Experience
             </Link>
 
