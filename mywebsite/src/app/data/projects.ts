@@ -12,11 +12,6 @@ export interface Project {
   featured: boolean
   content: {
     overview: string
-    problem: string
-    solution: string
-    myContribution: string[]
-    team: string
-    year: string
     process?: {
       title: string
       sections: {
@@ -34,13 +29,11 @@ export interface Project {
       alt: string
       caption?: string
     }[]
-  }
-  metadata: {
-    duration: string
-    team: string
-    role: string
-    category: string
-    year: string
+    video?: {
+      youtubeId: string
+      title: string
+      caption?: string
+    }
   }
 }
 
@@ -55,25 +48,8 @@ export const projectsData: Project[] = [
     github: "https://github.com/tylerle/nautichat",
     live: "https://nautichat-demo.com",
     featured: true,
-    metadata: {
-      duration: "6 months",
-      team: "5 members",
-      role: "Full-stack Developer & ML Engineer",
-      category: "Machine Learning",
-      year: "2024"
-    },
     content: {
       overview: "The Nautichat capstone project was about building an AI-powered assistant for Ocean Networks Canada (ONC). The idea was to make ONC's Oceans 3.0 data archive easier to use by letting people interact with it in plain language. This way, researchers, students, Indigenous communities, and policymakers could find and explore ocean data without needing technical knowledge. My main role was to design and develop an interface that felt simple but still powerful. I wanted the system to feel approachable for first-time users, while still giving researchers the tools they needed to dig deeper into the data.",
-      problem: "Ocean Network Canada had a ton of data, but it was hard for researchers to access it without technical expertise. They were spending a lot of time manually sifting through data, which was slowing down their research.",
-      solution: "Throughout the development process, I focused on creating an intuitive yet powerful interface that would enhance the overall user experience and encourage researchers to explore data more efficiently.",
-      myContribution: [
-        "Design with Figma",
-        "Create data visualization with D3.js",
-        "Build NLP pipeline with Python & TensorFlow",
-        "Connect team's code with Git"
-      ],
-      team: "5 × co-creators",
-      year: "2024",
       process: {
         title: "Process",
         sections: [
@@ -94,16 +70,22 @@ export const projectsData: Project[] = [
       },
       images: [
         {
-          src: "/images/nautichat-dashboard.png",
+          src: "/images/SystemDesign.png",
           alt: "Nautichat Dashboard Interface",
-          caption: "The main dashboard, where you can see real-time ocean data."
         },
         {
-          src: "/images/nautichat-chat.png",
+          src: "/images/LLM Workflow.png",
           alt: "Chat Interface",
-          caption: "The chat interface, where you can ask the AI questions."
+        },
+        {
+          src: "/images/Backend: Continuous Deployment.png",
+          alt: "Backend Continuous Deployment Interface",
         }
-      ]
+      ],
+      video: {
+        youtubeId: "yQhXODCGryM",
+        title: "Demo",
+      }
     }
   },
   {
@@ -116,25 +98,8 @@ export const projectsData: Project[] = [
     github: "https://github.com/tylerle/asl-go",
     live: "https://apps.apple.com/app/asl-go",
     featured: true,
-    metadata: {
-      duration: "3 months",
-      team: "4 members",
-      role: "iOS Developer & UX Designer",
-      category: "Mobile App",
-      year: "2024"
-    },
     content: {
       overview: "In this project case study, I will be sharing my experience designing and developing a mobile app for users to learn American Sign Language. Fostered by MIT's Blueprint hackathon, the goal was to help anyone learn and understand ASL by using AI and other features, thus enabling people to communicate with the deaf community and cultivate more inclusivity.",
-      problem: "Learning ASL can be tough. It often requires in-person classes, which can be expensive and hard to find. We wanted to create a more accessible way for people to learn.",
-      solution: "Throughout the design process, I focused on creating an intuitive yet simple user interface that would enhance the overall user experience and encourage the user to continue learning.",
-      myContribution: [
-        "Design with Figma",
-        "Create logo with Adobe Illustrator",
-        "Firebase signup/login screens with XCode & Swift",
-        "Connecting team's code with Git"
-      ],
-      team: "4 × co-creators",
-      year: "2024",
       process: {
         title: "Process",
         sections: [

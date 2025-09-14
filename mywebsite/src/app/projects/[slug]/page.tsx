@@ -65,27 +65,26 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         <div className="max-w-4xl mx-auto text-gray-800 leading-relaxed">
           <section className="mb-12">
             <h1 className="text-5xl font-bold text-gray-900 mb-6">Overview</h1>
-            <p className="text-lg leading-relaxed mb-6">{project.content.overview}</p>
-            <p className="text-lg leading-relaxed mb-8">{project.content.solution}</p>
-            
+            <p className="text-lg leading-relaxed mb-8">{project.content.overview}</p>
           </section>
 
-          {/* Project Image if available */}
-          {project.content.images && project.content.images.length > 0 && (
-            <div className="mb-12">
-              <div className="relative h-96 w-full overflow-hidden rounded-lg bg-gray-100">
-                <Image
-                  src={project.content.images[0].src}
-                  alt={project.content.images[0].alt}
-                  width={800}
-                  height={400}
-                  className="w-full h-full object-cover"
+          {/* Video Section */}
+          {project.content.video && (
+            <section className="mb-12">
+              <h2 className="text-4xl font-bold text-gray-900 mb-8">{project.content.video.title}</h2>
+              <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-gray-100 mb-4">
+                <iframe
+                  src={`https://www.youtube.com/embed/${project.content.video.youtubeId}`}
+                  title={project.content.video.title}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="absolute inset-0 w-full h-full"
                 />
               </div>
-              {project.content.images[0].caption && (
-                <p className="text-center text-gray-600 text-sm mt-2">{project.content.images[0].caption}</p>
+              {project.content.video.caption && (
+                <p className="text-gray-600 text-center italic">{project.content.video.caption}</p>
               )}
-            </div>
+            </section>
           )}
 
           {/* Process Section */}
@@ -99,6 +98,25 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 </div>
               ))}
             </section>
+          )}
+
+          {/* Project Images if available */}
+          {project.content.images && project.content.images.length > 0 && (
+            <div className="mb-12 space-y-8">
+              {project.content.images.map((image, index) => (
+                <div key={index}>
+                  <div className="relative w-full overflow-hidden rounded-lg bg-gray-100">
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      width={800}
+                      height={600}
+                      className="w-full h-auto object-contain"
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
           )}
 
           {/* Outcome Section */}
@@ -122,24 +140,6 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             </section>
           )}
 
-          {/* Call to Action Button */}
-          <section className="mb-12">
-            <div className="mb-8">
-              {project.live ? (
-                <Button size="lg" className="bg-black hover:bg-gray-800 text-white px-8 py-4 text-lg font-medium">
-                  See demo of login/sign up pages
-                  <ExternalLink className="ml-2 h-5 w-5" />
-                </Button>
-              ) : project.github ? (
-                <Link href={project.github} target="_blank">
-                  <Button size="lg" className="bg-black hover:bg-gray-800 text-white px-8 py-4 text-lg font-medium">
-                    View on GitHub
-                    <Github className="ml-2 h-5 w-5" />
-                  </Button>
-                </Link>
-              ) : null}
-            </div>
-          </section>
         </div>
 
 
